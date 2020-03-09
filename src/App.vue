@@ -37,7 +37,7 @@
         </v-toolbar>
     </v-card>
     <v-content>
-      <Main/>
+      <router-view></router-view>
     </v-content>
     <v-footer
   >
@@ -73,15 +73,10 @@
   .mobile { display: block; }
 }
 </style>
-<script>
-import Main from './components/Main'
 
+<script>
 export default {
   name: 'App',
-
-  components: {
-    Main,
-  },
 
   data: () => ({
     item: 1,
