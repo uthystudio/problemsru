@@ -2,7 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '../components/Main.vue'
 import TasksList from '../components/TasksList.vue'
-
+import Search from '../components/Search.vue'
+import NotFound from '../components/NotFound.vue'
+import Catalogs from '../components/Catalogs.vue'
+import AboutAuthors from '../components/AboutAuthors.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,10 +17,27 @@ const routes = [
   {
     path: '/tasks',
     name: 'Tasks',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: TasksList
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
+  },
+  {
+    path: '/catalogs',
+    name: 'Catalogs',
+    component: Catalogs
+  },
+  {
+    path: '/authors',
+    name: 'Authors',
+    component: AboutAuthors
+  },
+  {
+    path: '**',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

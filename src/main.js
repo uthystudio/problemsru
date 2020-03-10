@@ -4,9 +4,8 @@ import App from './App';
 import router from './router'
 
 Vue.config.productionTip = false
-
 new Vue({
   vuetify,
   router,
-  render (h) { return h(App) }
-})
+  render: h => h(App),
+}).$mount('#app')

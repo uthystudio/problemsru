@@ -2,33 +2,24 @@
   <v-app>
     <v-card flat tile>
         <v-toolbar>
-          <v-toolbar-title>Problems.ru - Задачи</v-toolbar-title>
+          <v-toolbar-title><router-link style="text-decoration: none; color: black" to="/">Problems.ru - Задачи</router-link></v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn color="primary" class="menu_button computer">
-            <v-icon>search</v-icon>
-          </v-btn>
+          <router-link to="/search">
+            <v-btn color="primary" class="menu_button computer">
+              <v-icon>search</v-icon>
+            </v-btn>
+          </router-link>
+
+          <router-link to="/tasks">
           <v-btn color="primary" class="menu_button computer">
             Решать задачи!
           </v-btn>
-          <v-menu offset-y>
-            <template v-slot:activator="{ on }">
-              <v-btn color="primary" class="menu_button computer" v-on="on">
-                Каталог
-              </v-btn>
-            </template>
-            <v-list>
-                <v-list-item class="cursor_pointer">
-                  <v-list-item-title>Каталог по темам</v-list-item-title>
-                </v-list-item>
-                <v-list-item class="cursor_pointer">
-                  <v-list-item-title>Каталог по источникам </v-list-item-title>
-                </v-list-item>
-                <v-list-item class="cursor_pointer">
-                  <v-list-item-title>Каталог по авторам </v-list-item-title>
-                </v-list-item>
-                
-            </v-list>
-          </v-menu>
+          </router-link>
+          <router-link to="catalogs">
+          <v-btn color="primary" class="menu_button computer" v-on="on">
+            Каталоги
+          </v-btn>
+          </router-link>
           <v-btn color="primary" class="menu_button computer">
             Справочник
           </v-btn>
@@ -45,8 +36,8 @@
       class="text-center"
     >
     <div class="about_block">
-    <a>О проекте</a>
-    <a>Об авторах</a>
+    <router-link style="text-decoration: none" to="/authors">О проекте</router-link>
+    <router-link style="text-decoration: none" to="/authors">Об авторах</router-link>
     </div>
       <v-card-text >
         Интернет-проект «Задачи» предназначен для учителей и преподавателей, как помощь при подготовке уроков, кружков и факультативных занятий в школе. Система «Задачи» поможет и школьнику, заинтересовавшемуся какой-то задачей, найти и ее, и множество похожих примеров; поможет глубже понять данную тему и расширить свой кругозор. Хочется верить, что в нашей системе каждый сможет найти для себя интересную задачу.
